@@ -22,10 +22,28 @@ const _dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "WahalaFix – Report City Problems in Seconds",
+  title: {
+    default: "WahalaFix | Nigeria 311 Service for City Issues",
+    template: "%s | WahalaFix",
+  },
   description:
-    "WahalaFix lets Lagos residents snap a photo, drop a pin, and notify authorities about potholes, broken streetlights, flooding, and waste.",
+    "WahalaFix is Nigeria's 311-style civic reporting app. Report potholes, broken streetlights, flooding, waste, and public safety issues in Lagos and beyond in seconds.",
   generator: "v0.app",
+  applicationName: "WahalaFix",
+  keywords: [
+    "Nigeria 311",
+    "Lagos 311",
+    "report potholes Lagos",
+    "streetlight outage report",
+    "flooding report Lagos",
+    "waste management report",
+    "civic reporting app",
+    "local government service request",
+    "public works reporting",
+    "city problem reporting",
+    "community reporting Nigeria",
+    "municipal issue reporting",
+  ],
   icons: {
     icon: [
       {
@@ -42,6 +60,29 @@ export const metadata: Metadata = {
       },
     ],
     apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "WahalaFix | Nigeria 311 Service for City Issues",
+    description:
+      "Report potholes, broken streetlights, flooding, waste, and public safety issues in Lagos and across Nigeria. Snap a photo, drop a pin, and notify the right authorities.",
+    type: "website",
+    locale: "en_NG",
+    siteName: "WahalaFix",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "WahalaFix - Nigeria 311 Service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "WahalaFix | Nigeria 311 Service for City Issues",
+    description:
+      "Nigeria's 311-style civic reporting app for potholes, streetlights, flooding, waste, and safety issues.",
+    images: ["/opengraph-image"],
   },
 };
 
