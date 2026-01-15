@@ -40,28 +40,28 @@ const Footer = () => {
                 className="text-background/70 hover:text-background transition-colors"
                 aria-label="X"
               >
-                <FontAwesomeIcon icon={faXTwitter} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faXTwitter} size="lg" />
               </a>
               <a
                 href="#"
                 className="text-background/70 hover:text-background transition-colors"
                 aria-label="Instagram"
               >
-                <FontAwesomeIcon icon={faInstagram} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
               </a>
               <a
                 href="#"
                 className="text-background/70 hover:text-background transition-colors"
                 aria-label="TikTok"
               >
-                <FontAwesomeIcon icon={faTiktok} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faTiktok} size="lg" />
               </a>
               <a
                 href="#"
                 className="text-background/70 hover:text-background transition-colors"
                 aria-label="Facebook"
               >
-                <FontAwesomeIcon icon={faFacebookF} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faFacebookF} size="lg" />
               </a>
             </div>
           </div>

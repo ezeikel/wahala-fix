@@ -6,7 +6,7 @@ import {
   faRoad,
   faLightbulb,
   faTrash,
-} from "@fortawesome/pro-solid-svg-icons";
+} from "@fortawesome/pro-regular-svg-icons";
 import SecondaryButton from "@/components/ui/SecondaryButton";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import AppStoreButtons from "@/components/ui/AppStoreButtons";
@@ -185,7 +185,8 @@ const HeroSection = () => {
                             >
                               <FontAwesomeIcon
                                 icon={marker.icon}
-                                className="w-4 h-4 text-white"
+                                className="text-white"
+                                size="lg"
                               />
                             </div>
                           </motion.div>
@@ -207,7 +208,8 @@ const HeroSection = () => {
                     <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <FontAwesomeIcon
                         icon={faLocationDot}
-                        className="w-5 h-5 text-primary"
+                        className="text-primary"
+                        size="lg"
                       />
                     </div>
                     <div>

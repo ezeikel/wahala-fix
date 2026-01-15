@@ -4,7 +4,7 @@ import {
   faEye,
   faMapLocationDot,
   faArrowTrendUp,
-} from "@fortawesome/pro-solid-svg-icons";
+} from "@fortawesome/pro-regular-svg-icons";
 import StepItem from "@/components/ui/StepItem";
 import { motion } from "framer-motion";
 

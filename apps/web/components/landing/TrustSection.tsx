@@ -6,7 +6,7 @@ import {
   faHandshake,
   faGlobe,
   faLock,
-} from "@fortawesome/pro-solid-svg-icons";
+} from "@fortawesome/pro-regular-svg-icons";
 import { motion } from "framer-motion";
 
 const trustPoints = [
@@ -93,7 +93,8 @@ const TrustSection = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <FontAwesomeIcon
                     icon={point.icon}
-                    className="w-7 h-7 text-primary"
+                    className="text-primary"
+                    size="lg"
                   />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">

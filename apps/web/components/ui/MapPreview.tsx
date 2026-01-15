@@ -102,7 +102,8 @@ const IssueMarker = ({
         >
           <FontAwesomeIcon
             icon={filterConfig[type].icon}
-            className="w-4 h-4 text-white"
+            className="text-white"
+            size="sm"
           />
         </div>
         <div
@@ -150,10 +151,7 @@ const MapPreview = () => {
                     : "bg-muted text-muted-foreground hover:bg-muted/80",
                 )}
               >
-                <FontAwesomeIcon
-                  icon={filterConfig[filter].icon}
-                  className="w-4 h-4"
-                />
+                <FontAwesomeIcon icon={filterConfig[filter].icon} size="sm" />
                 {filterConfig[filter].label}
               </button>
             );
@@ -182,10 +180,7 @@ const MapPreview = () => {
                   : "bg-muted text-muted-foreground hover:bg-muted/80",
               )}
             >
-              <FontAwesomeIcon
-                icon={filterConfig[filter].icon}
-                className="w-4 h-4"
-              />
+              <FontAwesomeIcon icon={filterConfig[filter].icon} size="sm" />
               {filterConfig[filter].label}
             </button>
           );

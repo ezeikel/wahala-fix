@@ -13,7 +13,7 @@ const StepItem = ({ step, icon, title, description }: StepItemProps) => {
     <div className="flex flex-col items-center text-center gap-4">
       <div className="relative">
         <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-          <FontAwesomeIcon icon={icon} className="w-7 h-7 text-primary" />
+          <FontAwesomeIcon icon={icon} className="text-primary" size="lg" />
         </div>
         <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center">
           {step}

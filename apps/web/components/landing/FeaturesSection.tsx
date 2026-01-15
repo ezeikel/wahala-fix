@@ -10,7 +10,7 @@ import {
   faMapLocationDot,
   faClipboardList,
   faFire,
-} from "@fortawesome/pro-solid-svg-icons";
+} from "@fortawesome/pro-regular-svg-icons";
 import Card from "@/components/ui/Card";
 import { motion } from "framer-motion";
 
@@ -97,7 +97,8 @@ const FeaturesSection = () => {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <FontAwesomeIcon
                     icon={faUser}
-                    className="w-6 h-6 text-primary"
+                    className="text-primary"
+                    size="xl"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-foreground font-[family-name:var(--font-heading)]">
@@ -121,7 +122,8 @@ const FeaturesSection = () => {
                       <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
                         <FontAwesomeIcon
                           icon={feature.icon}
-                          className="w-5 h-5 text-primary"
+                          className="text-primary"
+                          size="lg"
                         />
                       </div>
                       <div>
@@ -151,7 +153,8 @@ const FeaturesSection = () => {
                 <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
                   <FontAwesomeIcon
                     icon={faLandmark}
-                    className="w-6 h-6 text-accent-foreground"
+                    className="text-accent-foreground"
+                    size="xl"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-foreground font-[family-name:var(--font-heading)]">
@@ -175,7 +178,8 @@ const FeaturesSection = () => {
                       <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
                         <FontAwesomeIcon
                           icon={feature.icon}
-                          className="w-5 h-5 text-primary"
+                          className="text-primary"
+                          size="lg"
                         />
                       </div>
                       <div>

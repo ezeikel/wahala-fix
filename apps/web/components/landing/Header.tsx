@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/pro-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/pro-regular-svg-icons";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -82,9 +82,9 @@ const Header = () => {
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <FontAwesomeIcon icon={faXmark} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faXmark} size="xl" />
             ) : (
-              <FontAwesomeIcon icon={faBars} className="w-6 h-6" />
+              <FontAwesomeIcon icon={faBars} size="xl" />
             )}
           </button>
         </div>

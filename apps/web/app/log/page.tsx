@@ -18,7 +18,7 @@ import {
   faMagnifyingGlass,
   faClock,
   faEye,
-} from "@fortawesome/pro-solid-svg-icons";
+} from "@fortawesome/pro-regular-svg-icons";
 import Link from "next/link";
 import Image from "next/image";
 import type mapboxgl from "mapbox-gl"; // Import mapboxgl
@@ -294,7 +294,8 @@ const LogProblemPage = () => {
             >
               <FontAwesomeIcon
                 icon={faCheck}
-                className="w-10 h-10 text-primary"
+                className="text-primary"
+                size="2x"
               />
             </motion.div>
 
@@ -323,7 +324,7 @@ const LogProblemPage = () => {
                 href="/#map"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all"
               >
-                <FontAwesomeIcon icon={faEye} className="w-4 h-4" />
+                <FontAwesomeIcon icon={faEye} size="sm" />
                 View on map
               </Link>
               <Link
@@ -494,7 +495,8 @@ const LogProblemPage = () => {
                 <div className="relative mb-4">
                   <FontAwesomeIcon
                     icon={faMagnifyingGlass}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+                    size="lg"
                   />
                   <input
                     type="text"
@@ -555,7 +557,8 @@ const LogProblemPage = () => {
                     <div className="relative">
                       <FontAwesomeIcon
                         icon={faCrosshairs}
-                        className="w-10 h-10 text-primary drop-shadow-lg"
+                        className="text-primary drop-shadow-lg"
+                        size="2x"
                       />
                       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-primary rounded-full" />
                     </div>
@@ -567,7 +570,8 @@ const LogProblemPage = () => {
                   <div className="flex items-start gap-3">
                     <FontAwesomeIcon
                       icon={faLocationDot}
-                      className="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+                      className="text-primary flex-shrink-0 mt-0.5"
+                      size="lg"
                     />
                     <div>
                       <p className="text-xs text-muted-foreground mb-1">
@@ -622,7 +626,8 @@ const LogProblemPage = () => {
                     <div className="w-14 h-14 bg-muted rounded-full flex items-center justify-center">
                       <FontAwesomeIcon
                         icon={faCamera}
-                        className="w-7 h-7 text-muted-foreground"
+                        className="text-muted-foreground"
+                        size="2xl"
                       />
                     </div>
                     <div>
@@ -634,10 +639,7 @@ const LogProblemPage = () => {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <FontAwesomeIcon
-                        icon={faArrowUpFromBracket}
-                        className="w-4 h-4"
-                      />
+                      <FontAwesomeIcon icon={faArrowUpFromBracket} size="sm" />
                       <span>Upload up to 3 photos</span>
                     </div>
                   </div>
@@ -663,7 +665,8 @@ const LogProblemPage = () => {
                         >
                           <FontAwesomeIcon
                             icon={faXmark}
-                            className="w-4 h-4 text-background"
+                            className="text-background"
+                            size="sm"
                           />
                         </button>
                       </div>
@@ -818,12 +821,12 @@ const LogProblemPage = () => {
                 onClick={goToPrevStep}
                 className="flex items-center gap-2 px-4 py-3 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
               >
-                <FontAwesomeIcon icon={faChevronLeft} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faChevronLeft} size="lg" />
                 <span className="font-medium">Back</span>
               </button>
             ) : (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <FontAwesomeIcon icon={faClock} className="w-4 h-4" />
+                <FontAwesomeIcon icon={faClock} size="sm" />
                 <span>Takes less than 1 minute</span>
               </div>
             )}
@@ -834,7 +837,7 @@ const LogProblemPage = () => {
                 className="flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-all active:scale-[0.98]"
               >
                 <span>Continue</span>
-                <FontAwesomeIcon icon={faChevronRight} className="w-5 h-5" />
+                <FontAwesomeIcon icon={faChevronRight} size="lg" />
               </button>
             ) : (
               <button
@@ -849,7 +852,7 @@ const LogProblemPage = () => {
                   </>
                 ) : (
                   <>
-                    <FontAwesomeIcon icon={faCheck} className="w-5 h-5" />
+                    <FontAwesomeIcon icon={faCheck} size="lg" />
                     <span>Submit report</span>
                   </>
                 )}

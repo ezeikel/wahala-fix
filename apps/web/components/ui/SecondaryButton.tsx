@@ -33,7 +33,7 @@ const SecondaryButton = ({
   if (href) {
     return (
       <a href={href} className={baseStyles}>
-        {icon && <FontAwesomeIcon icon={icon} className="w-4 h-4" />}
+        {icon && <FontAwesomeIcon icon={icon} size="sm" />}
         {children}
       </a>
     );
@@ -41,7 +41,7 @@ const SecondaryButton = ({
 
   return (
     <button onClick={onClick} className={baseStyles}>
-      {icon && <FontAwesomeIcon icon={icon} className="w-4 h-4" />}
+      {icon && <FontAwesomeIcon icon={icon} size="sm" />}
       {children}
     </button>
   );
