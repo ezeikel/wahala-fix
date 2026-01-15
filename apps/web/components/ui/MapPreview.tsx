@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,10 +11,10 @@ import {
   faDroplet,
   faTrashCan,
 } from "@fortawesome/pro-regular-svg-icons";
+import type mapboxgl from "mapbox-gl";
 import Map, { Marker as MapMarker } from "react-map-gl/mapbox";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
-const LAGOS_CENTER = { latitude: 6.5244, longitude: 3.3792 };
 
 type FilterType = "all" | "roads" | "light" | "flooding" | "waste";
 
@@ -26,44 +26,13 @@ type MarkerProps = {
   active: boolean;
 };
 
-const markers: Omit<MarkerProps, "active">[] = [
-  {
-    type: "roads",
-    latitude: 6.4966,
-    longitude: 3.3499,
-    label: "Pothole - Surulere",
-  },
-  {
-    type: "light",
-    latitude: 6.4541,
-    longitude: 3.4351,
-    label: "Broken Light - Ikoyi",
-  },
-  {
-    type: "flooding",
-    latitude: 6.4474,
-    longitude: 3.472,
-    label: "Flooding - Lekki Phase 1",
-  },
-  {
-    type: "waste",
-    latitude: 6.451,
-    longitude: 3.3609,
-    label: "Waste Dump - Apapa",
-  },
-  {
-    type: "roads",
-    latitude: 6.6018,
-    longitude: 3.3515,
-    label: "Road Damage - Ikeja",
-  },
-  {
-    type: "light",
-    latitude: 6.5151,
-    longitude: 3.3763,
-    label: "Light Outage - Yaba",
-  },
-];
+type CityConfig = {
+  name: string;
+  label: string;
+  center: { latitude: number; longitude: number };
+  zoom: number;
+  markers: Omit<MarkerProps, "active">[];
+};
 
 const filterConfig: Record<
   FilterType,
@@ -132,8 +101,20 @@ const IssueMarker = ({
   );
 };
 
-const MapPreview = () => {
+const MapPreview = ({ city }: { city: CityConfig }) => {
   const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+  const mapRef = useRef<mapboxgl.Map | null>(null);
+  const markers = city.markers;
+
+  useEffect(() => {
+    if (!mapRef.current) return;
+    mapRef.current.flyTo({
+      center: [city.center.longitude, city.center.latitude],
+      zoom: city.zoom,
+      duration: 900,
+      essential: true,
+    });
+  }, [city.center.latitude, city.center.longitude, city.zoom]);
 
   if (!MAPBOX_TOKEN) {
     return (
@@ -190,10 +171,13 @@ const MapPreview = () => {
       {/* Map Container */}
       <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-xl overflow-hidden bg-muted border border-border">
         <Map
+          ref={(instance) => {
+            mapRef.current = instance?.getMap() ?? null;
+          }}
           initialViewState={{
-            latitude: LAGOS_CENTER.latitude,
-            longitude: LAGOS_CENTER.longitude,
-            zoom: 11.8,
+            latitude: city.center.latitude,
+            longitude: city.center.longitude,
+            zoom: city.zoom,
           }}
           mapStyle="mapbox://styles/mapbox/streets-v12"
           mapboxAccessToken={MAPBOX_TOKEN}
@@ -221,10 +205,10 @@ const MapPreview = () => {
         {/* Map Overlay */}
         <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
 
-        {/* Lagos Label */}
+        {/* City Label */}
         <div className="absolute bottom-4 left-4 bg-card/95 backdrop-blur-sm rounded-lg px-3 py-2 shadow-md">
           <p className="text-xs text-muted-foreground">Viewing</p>
-          <p className="font-semibold text-foreground">Lagos, Nigeria</p>
+          <p className="font-semibold text-foreground">{city.label}, Nigeria</p>
         </div>
 
         {/* Issue Count */}
