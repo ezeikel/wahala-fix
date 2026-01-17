@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import PlausibleProvider from "next-plausible";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@/global.css";
@@ -100,8 +101,10 @@ const RootLayout = ({
   return (
     <html lang="en" className={`${_plusJakarta.variable} ${_dmSans.variable}`}>
       <body className="font-sans antialiased">
-        {children}
-        <Analytics />
+        <PlausibleProvider domain="wahalafix.ng" trackOutboundLinks>
+          {children}
+          <Analytics />
+        </PlausibleProvider>
       </body>
     </html>
   );
